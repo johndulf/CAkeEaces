@@ -17,7 +17,7 @@
 
     function Register(){
         $backend = new backend();
-        echo $backend->doRegister($_POST['username'],$_POST['email'],$_POST['password'],$_POST['role'],"defaultProfilePicture.jpg");
+        echo $backend->doRegister($_POST['username'],$_POST['fullname'],$_POST['password'],$_POST['confirmPassword'],$_POST['address'],$_POST['mobile'],$_POST['email'],$_POST['user_role'],$_POST['userid']);
     }
 
 ?>

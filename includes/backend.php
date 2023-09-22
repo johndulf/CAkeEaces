@@ -5,8 +5,8 @@ class backend{
     public function doLogin($email,$password){
         return $this->login($email,$password);
     }
-    public function doRegister($name,$email,$password,$role){
-        return $this->register($name,$email,$password,$role);
+    public function doRegister($username,$fullname,$password,$confirmPassword,$address,$mobile,$email,$user_role,$userid){
+        return $this->register($username,$fullname,$password,$confirmPassword,$address,$mobile,$email,$user_role,$userid);
     }
     private function login($email,$password){
         try{
@@ -58,13 +58,13 @@ class backend{
         }
     }
 
-    private function register($name,$email,$password,$role){
+    private function register($username,$fullname,$password,$confirmPassword,$address,$mobile,$email,$user_role,$userid){
         try{
             $con = new database();
             if($con->getStatus()){
                 $DT = new data();
                 $query = $con->getCon()->prepare($DT->doRegisterData());
-                $query->execute(array($name, $email, md5($password), $role));
+                $query->execute(array($username, $fullname, md5($password), md5($confirmPassword),$address,$mobile,$email,$user_role,$userid));
                 $result = $query->fetch();
                 if(!$result){
                     $con->closeConnection();
