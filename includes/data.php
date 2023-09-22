@@ -8,7 +8,10 @@ class data{
         return $this->registerData();
     }
     private function loginData(){
-        return "SELECT * FROM `user_table` WHERE `email` = ? AND `password` = ?";
+        return    
+        $query = $con->prepare("call sp_login(?,?)");
+        $query->bind_param('ss',$username,$password);
+        $query->execute();
     }
 
     private function registerData(){

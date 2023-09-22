@@ -22,7 +22,7 @@
         <div class="right-side" >
             <div class="login-form" >
             <h2>Login</h2>
-                <form @submit="fnLogin($event)">
+                <form @submit="login">
                     <div class="form-group">
                         <input type="text" name="username" required>
                         <label for="username">Username</label>
@@ -55,9 +55,9 @@
     </div>
 
 
-    <script src="js/vue.3.js"></script>
-    <script src="js/axios.js"></script>
-    <script src="js/login.js"></script>
+    <script src="assets/js/vue.3.js"></script>
+    <script src="assets/js/axios.js"></script>
+    <script src="assets/js/login.js"></script>
     <script>
            const formFields = document.querySelectorAll('input[type="text"], input[type="password"]');
 

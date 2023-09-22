@@ -12,7 +12,7 @@
 
     function Login(){
         $backend = new backend();
-        echo $backend->doLogin($_POST['email'],$_POST['password']);
+        echo $backend->doLogin($_POST['username'],$_POST['password']);
     }
 
     function Register(){
